@@ -122,7 +122,7 @@ class VQADataProvider:
         """ Return the most popular answer in string."""
         if self.mode == 'test-dev' or self.mode == 'test':
             return -1
-        answer_list = [ answer_obj[i]['answer'] for i in xrange(10)]
+        answer_list = [ answer_obj[i]['answer'] for i in range(10)]
         dic = {}
         for ans in answer_list:
             if dic.has_key(ans):
@@ -186,7 +186,7 @@ class VQADataProvider:
         #         qvec[i] = self.vdict[w]
         #         cvec[i] = 0 if i == max_length - len(q_list) else 1
         """  pad on the right   """
-        for i in xrange(max_length):
+        for i in range(max_length):
             if i >= len(q_list):
                 pass
             else:
@@ -249,7 +249,8 @@ class VQADataProvider:
                 if data_split == 'genome':
                     t_ivec = np.load(config.DATA_PATHS['genome']['features_prefix'] + str(q_iid) + '.jpg.npz')['x']
                 else:
-                    t_ivec = np.load(config.DATA_PATHS[data_split]['features_prefix'] + str(q_iid).zfill(12) + '.jpg.npz')['x']
+                    t_ivec = np.load(
+                        config.DATA_PATHS[data_split]['features_prefix'] + str(q_iid).zfill(12) + '.jpg.npz')['x']
                 
                 # reshape t_ivec to D x FEAT_SIZE
                 if len(t_ivec.shape) > 2:
@@ -257,7 +258,7 @@ class VQADataProvider:
                 t_ivec = ( t_ivec / np.sqrt((t_ivec**2).sum()) )
             except:
                 t_ivec = 0.
-                print 'data not found for qid : ', q_iid,  self.mode
+                print('data not found for qid : ', q_iid,  self.mode)
              
             # convert answer to vec
             if self.mode == 'val' or self.mode == 'test-dev' or self.mode == 'test':
