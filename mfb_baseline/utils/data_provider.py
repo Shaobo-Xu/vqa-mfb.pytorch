@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-import numpy as np
-import re, json, random
+import json
+import random
+import re
+
 import config
+import numpy as np
 import torch.utils.data as data
 
 QID_KEY_SEPARATOR = '/'

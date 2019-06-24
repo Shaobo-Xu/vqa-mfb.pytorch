@@ -1,8 +1,10 @@
+import sys
+
 import torch
 import torch.nn as nn
-from torch.autograd import Variable
 import torch.nn.functional as F
-import sys
+from torch.autograd import Variable
+
 sys.path.append("..")
 
 

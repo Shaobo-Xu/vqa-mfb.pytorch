@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
-import numpy as np
-import re, json, random
+import json
+import random
+import re
+
 import config
-import torch.utils.data as data
+import numpy as np
 import spacy
+import torch.utils.data as data
 
 QID_KEY_SEPARATOR = '/'
 ZERO_PAD = '_PAD'
@@ -51,7 +54,7 @@ class VQADataProvider:
                     adic[data_split + QID_KEY_SEPARATOR + str(a['question_id'])] = \
                         a['answers']
 
-        print 'parsed', len(qdic), 'questions for', data_split
+        print('parsed', len(qdic), 'questions for', data_split)
         return qdic, adic
 
     @staticmethod
@@ -69,7 +72,7 @@ class VQADataProvider:
                 qdic[key] = {'qstr': q['question'], 'iid': q['image']}
                 adic[key] = [{'answer': q['answer']}]
 
-        print 'parsed', len(qdic), 'questions for genome'
+        print('parsed', len(qdic), 'questions for genome')
         return qdic, adic
 
     @staticmethod

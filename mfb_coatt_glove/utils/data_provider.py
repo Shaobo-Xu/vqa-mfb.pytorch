@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
-import numpy as np
-import re, json, random
+import json
+import random
+import re
+
 import config
-import torch.utils.data as data
+import numpy as np
 import spacy
+import torch.utils.data as data
 
 QID_KEY_SEPARATOR = '/'
 ZERO_PAD = '_PAD'

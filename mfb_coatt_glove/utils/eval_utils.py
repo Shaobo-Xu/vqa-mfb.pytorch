@@ -1,5 +1,6 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 plt.switch_backend('agg')
 import os
 import sys
@@ -7,7 +8,7 @@ import json
 import re
 import shutil
 from PIL import Image
-from PIL import ImageFont, ImageDraw
+from PIL import ImageDraw
 import torch
 import torch.nn as nn
 from torch.autograd import Variable

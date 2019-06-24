@@ -2,26 +2,28 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-import torch
-import torch.nn as nn
-import torch.optim as optim
-import torch.nn.init as init
-from torch.autograd import Variable
-import numpy as np
+
+import datetime
+import json
 import os
 import sys
+
 import config
-from models.mfh_coatt_glove import mfh_coatt_glove
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.init as init
+import torch.optim as optim
 import utils.data_provider as data_provider
+from models.mfh_coatt_glove import mfh_coatt_glove
+from tensorboardX import SummaryWriter
+from torch.autograd import Variable
 from utils.data_provider import VQADataProvider
 from utils.eval_utils import exec_validation, drawgraph
-import json
-import datetime
-from tensorboardX import SummaryWriter 
+
 sys.path.append(config.VQA_TOOLS_PATH)
 sys.path.append(config.VQA_EVAL_TOOLS_PATH)
-from vqaTools.vqa import VQA
-from vqaEvaluation.vqaEval import VQAEval
+
 
 def make_answer_vocab(adic, vocab_size):
     """
